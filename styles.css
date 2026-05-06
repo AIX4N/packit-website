@@ -45,3 +45,41 @@ h1{font-size:clamp(34px,5vw,52px);line-height:1.05;margin:14px 0 12px;letter-spa
 .nav-badge img {height: 40px; /* smaller in navbar */}
 .appstore-badge img {transition: transform .15s ease, filter .15s ease;}
 .appstore-badge:hover img {transform: translateY(-1px);filter: brightness(1.03);}
+/* --- Support page structure --- */
+.support-card{
+  margin-top:14px;
+  padding:18px;
+  border-radius:var(--radius);
+  background:rgba(255,255,255,.86);
+  border:1px solid rgba(14,22,51,.06);
+  box-shadow:0 10px 30px rgba(14,22,51,.05);
+}
+.support-card-top{
+  display:flex;
+  justify-content:space-between;
+  gap:14px;
+  flex-wrap:wrap;
+  align-items:center;
+}
+.support-title{font-weight:900;font-size:16px;letter-spacing:-.02em}
+.support-sub{color:var(--muted);font-size:13.5px;margin-top:4px}
+.support-meta{margin-top:12px;color:var(--muted);font-size:13.5px}
+.support-grid{
+  display:grid;
+  gap:12px;
+  grid-template-columns:repeat(3,1fr);
+  margin:14px 0 6px;
+}
+@media (max-width:920px){ .support-grid{grid-template-columns:1fr} }
+.support-tile{
+  display:block;
+  padding:14px;
+  border-radius:16px;
+  border:1px solid var(--border);
+  background:rgba(255,255,255,.75);
+  transition:transform .15s ease, border-color .15s ease;
+}
+.support-tile:hover{transform:translateY(-1px);border-color:rgba(43,107,255,.35)}
+.support-tile-title{font-weight:850}
+.support-tile-sub{color:var(--muted);margin-top:6px;font-size:13.5px;line-height:1.4}
+.support-bottom{margin-top:18px}
