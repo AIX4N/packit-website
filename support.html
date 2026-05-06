@@ -1,22 +1,60 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>Support — PackIt</title>
-  <meta name="description" content="PackIt Support — help with login, verification, trips, shipments, safety, and privacy requests." />
-  <link rel="icon" href="assets/logo.svg" />
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="PackIt Support — help with login, verification, trips, shipments, safety, and privacy requests."/>
+  <link rel="icon" href="assets/logo.svg"/>
+  <link rel="stylesheet" href="styles.css"/>
+  <style>
+    /* Small, local-only polish for Support (keeps site consistent) */
+    .support-hero { padding: 18px; margin-bottom: 14px; }
+    .support-hero h1 { margin: 0 0 8px; }
+    .support-hero p { margin: 0; color: var(--muted); line-height: 1.7; }
+    .support-actions { display:flex; gap:10px; flex-wrap:wrap; margin-top: 12px; align-items:center; }
+    .support-actions .pill { background: rgba(255,255,255,.9); }
+    .support-grid { display:grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 14px; }
+    @media (max-width: 920px){ .support-grid { grid-template-columns: 1fr; } }
+    .support-card { padding: 16px; }
+    .support-card h2 { margin: 0 0 10px; font-size: 18px; letter-spacing: -.02em; }
+    .support-card p { margin: 0 0 10px; color: var(--muted); line-height: 1.7; }
+    .faq { margin-top: 10px; border-top: 1px solid rgba(14,22,51,.06); padding-top: 10px; }
+    details { border: 1px solid rgba(14,22,51,.08); border-radius: 16px; padding: 12px 14px; background: rgba(255,255,255,.85); }
+    details + details { margin-top: 10px; }
+    summary { cursor:pointer; font-weight: 800; list-style: none; }
+    summary::-webkit-details-marker { display:none; }
+    summary:after{
+      content:"";
+      float:right;
+      width:10px;height:10px;
+      border-right:2px solid rgba(14,22,51,.45);
+      border-bottom:2px solid rgba(14,22,51,.45);
+      transform: rotate(45deg);
+      margin-top: 6px;
+      transition: transform .15s ease;
+    }
+    details[open] summary:after{ transform: rotate(-135deg); margin-top: 10px; }
+    .faq ul { margin: 10px 0 0 18px; color: var(--muted); line-height: 1.7; }
+    .support-link { color: var(--primary); text-decoration: underline; text-underline-offset: 3px; }
+    .support-kpi { display:flex; gap:10px; flex-wrap:wrap; margin-top: 10px; }
+    .support-kpi .pill { border-color: rgba(14,22,51,.08); }
+    .callout { padding: 14px; border-radius: 16px; background: rgba(43,107,255,.08); border: 1px solid rgba(43,107,255,.18); color: var(--muted); line-height: 1.7; }
+    .two-col { display:grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 10px; }
+    @media (max-width: 920px){ .two-col { grid-template-columns: 1fr; } }
+    .mini { padding: 14px; border-radius: 16px; border: 1px solid rgba(14,22,51,.06); background: rgba(255,255,255,.85); }
+    .mini b { display:block; margin-bottom: 6px; color: var(--text); }
+    .mini div { color: var(--muted); line-height: 1.65; }
+  </style>
 </head>
 
 <body>
   <div class="nav">
     <div class="container nav-inner">
       <a class="brand" href="index.html">
-        <img src="assets/logo.svg" alt="PackIt logo" />
+        <img src="assets/logo.svg" alt="PackIt logo"/>
         <span>PackIt</span>
       </a>
-
       <div class="nav-links">
         <a class="pill" href="about.html">About</a>
         <a class="pill" href="support.html">Support</a>
@@ -25,214 +63,205 @@
         <a class="appstore-badge nav-badge"
            href="https://apps.apple.com/gb/app/packit-match-move/id6761582412"
            target="_blank" rel="noopener">
-          <img src="assets/appstore-badge-white.svg" alt="Download on the App Store" />
+          <img src="assets/appstore-badge-white.svg" alt="Download on the App Store">
         </a>
       </div>
     </div>
   </div>
 
-<main class="page support-page">
-  <div class="container">
+  <main class="page">
+    <div class="container">
 
-    <!-- Top header -->
-    <section class="support-hero card">
-      <div class="support-hero-inner">
-        <div>
-          <h1>Support</h1>
-          <p class="support-subtitle">
-            Need help with PackIt? We’re here for you.
-            Email us anytime at
-            <a class="support-link" href="mailto:support@itspackit.com">support@itspackit.com</a>.
-          </p>
+      <!-- HERO -->
+      <section class="card support-hero">
+        <h1>Support</h1>
+        <p>
+          Need help with PackIt? We’re here for you.
+          Contact us anytime at
+          <a class="support-link" href="mailto:support@itspackit.com">support@itspackit.com</a>.
+        </p>
 
-          <div class="support-cta-row">
-            <a class="btn" href="mailto:support@itspackit.com">
-              Email support
-            </a>
-            <div class="support-meta">
-              Usually within <b>1–5 business days</b>.
-            </div>
-          </div>
+        <div class="support-actions">
+          <a class="btn" href="mailto:support@itspackit.com">Email support</a>
+          <div class="pill">Typical reply: <b>1–5 business days</b></div>
         </div>
 
-        <div class="support-badge">
-          <div class="support-badge-title">Quick actions</div>
-          <div class="support-badge-links">
-            <a class="pill" href="mailto:support@itspackit.com">Contact support</a>
-            <a class="pill" href="privacy.html">Privacy Policy</a>
-            <a class="pill" href="about.html">About PackIt</a>
-          </div>
+        <div class="support-kpi">
+          <a class="pill" href="#account">Account & login</a>
+          <a class="pill" href="#approval">Approval</a>
+          <a class="pill" href="#matches">Trips & matches</a>
+          <a class="pill" href="#safety">Safety</a>
+          <a class="pill" href="#privacy-req">Privacy</a>
+          <a class="pill" href="#deletion">Delete account</a>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Layout: left TOC + right content -->
-    <section class="support-layout">
-      <aside class="support-toc card">
-        <div class="support-toc-title">Quick help</div>
-      
-        <nav class="support-toc-links">
-          <a href="#account">Account & login</a>
-          <a href="#approval">Approval / verification</a>
-          <a href="#matches">Trips, shipments & matches</a>
-          <a href="#safety">Safety & prohibited items</a>
-          <a href="#abuse">Report abuse</a>
-          <a href="#privacy">Data & privacy</a>
-          <a href="#deletion">Account deletion</a>
-        </nav>
-      </aside>
+      <!-- GRID -->
+      <section class="support-grid">
 
-      <div class="support-content">
-
+        <!-- Account -->
         <section id="account" class="card support-card">
           <h2>Account & login</h2>
 
-          <details class="support-faq" open>
-            <summary>I didn’t receive the verification email</summary>
-            <ul>
-              <li>Check spam/junk folders.</li>
-              <li>Make sure you used the correct email address.</li>
-              <li>Try requesting a new verification email from the app (if available).</li>
-            </ul>
-          </details>
+          <div class="faq">
+            <details open>
+              <summary>I didn’t receive the verification email</summary>
+              <ul>
+                <li>Check spam/junk folders.</li>
+                <li>Make sure you used the correct email address.</li>
+                <li>Try requesting a new verification email from the app (if available).</li>
+              </ul>
+            </details>
 
-          <details class="support-faq">
-            <summary>I forgot my password</summary>
-            <ul>
-              <li>Use <b>“Forgot password?”</b> on the login screen to request a reset link.</li>
-              <li>If the link expired, request a new one.</li>
-            </ul>
-          </details>
+            <details>
+              <summary>I forgot my password</summary>
+              <ul>
+                <li>Use <b>“Forgot password?”</b> on the login screen to request a reset link.</li>
+                <li>If the link expired, request a new one.</li>
+              </ul>
+            </details>
 
-          <details class="support-faq">
-            <summary>I can’t log in</summary>
-            <ul>
-              <li>Confirm your email is verified.</li>
-              <li>Check for typos in email/password.</li>
-              <li>If it still fails, email <a class="support-link" href="mailto:support@itspackit.com">support@itspackit.com</a>.</li>
-            </ul>
-          </details>
-        </section>
-
-        <section id="approval" class="card support-card">
-          <h2>Approval / verification</h2>
-          <p class="support-p">
-            To keep PackIt safe, some accounts may require review.
-          </p>
-
-          <div class="support-callouts">
-            <div class="support-callout">
-              <b>Pending approval</b>
-              <div>Your documents are being reviewed. You’ll be notified when a decision is made.</div>
-            </div>
-            <div class="support-callout">
-              <b>Rejected</b>
-              <div>If you believe it’s a mistake, contact support with your account email.</div>
-            </div>
+            <details>
+              <summary>I can’t log in</summary>
+              <ul>
+                <li>Confirm your email is verified.</li>
+                <li>Check for typos in email/password.</li>
+                <li>If you still can’t access your account, email <a class="support-link" href="mailto:support@itspackit.com">support@itspackit.com</a>.</li>
+              </ul>
+            </details>
           </div>
         </section>
 
+        <!-- Approval -->
+        <section id="approval" class="card support-card">
+          <h2>Approval / verification</h2>
+          <p>To keep PackIt safe, new accounts may require verification.</p>
+
+          <div class="two-col">
+            <div class="mini">
+              <b>Pending approval</b>
+              <div>Your documents are being reviewed. You’ll be notified once a decision is made.</div>
+            </div>
+            <div class="mini">
+              <b>Rejected</b>
+              <div>If you believe it’s a mistake, contact support. If a reason is shown in-app, include it in your message.</div>
+            </div>
+          </div>
+
+          <div style="margin-top:10px" class="callout">
+            Tip: when contacting support, include your account email and screenshots if possible.
+          </div>
+        </section>
+
+        <!-- Trips / Shipments / Matches -->
         <section id="matches" class="card support-card">
           <h2>Trips, shipments & matches</h2>
 
-          <details class="support-faq">
-            <summary>Posting a trip</summary>
-            <ul>
-              <li>Fill in route, date/time, and available weight clearly.</li>
-              <li>Add notes if pickup/drop-off requires context.</li>
-            </ul>
-          </details>
+          <div class="faq">
+            <details open>
+              <summary>Posting a trip</summary>
+              <ul>
+                <li>Fill in route, date/time, and available weight clearly.</li>
+                <li>Add notes if pickup/drop-off needs context.</li>
+              </ul>
+            </details>
 
-          <details class="support-faq">
-            <summary>Posting a shipment</summary>
-            <ul>
-              <li>Add accurate details, declared value, and an optional photo.</li>
-              <li>Choose realistic dates.</li>
-            </ul>
-          </details>
+            <details>
+              <summary>Posting a shipment</summary>
+              <ul>
+                <li>Add accurate details, declared value, and an optional photo.</li>
+                <li>Choose realistic dates and weight.</li>
+              </ul>
+            </details>
 
-          <details class="support-faq">
-            <summary>Match issues</summary>
-            <ul>
-              <li>If a match looks wrong or suspicious, contact support with a screenshot.</li>
-              <li>Include the match ID if visible.</li>
-            </ul>
-          </details>
+            <details>
+              <summary>Match issues</summary>
+              <ul>
+                <li>If a match looks wrong or suspicious, contact support with a screenshot.</li>
+                <li>Include the match ID (if visible).</li>
+              </ul>
+            </details>
+          </div>
         </section>
 
+        <!-- Safety -->
         <section id="safety" class="card support-card">
           <h2>Safety & prohibited items</h2>
-          <p class="support-p">
-            PackIt is not a shipping company. Users must follow airline, customs, and local laws.
+          <p>
+            PackIt is not a shipping company. Users must follow airline rules, customs rules, and local laws.
           </p>
 
           <div class="notice">
-            Never send or carry prohibited items, including (non-exhaustive): illegal substances, weapons, explosives, hazardous chemicals, counterfeit goods, cash, or anything illegal at origin/destination.
+            Never send or carry prohibited items (non-exhaustive): illegal substances, weapons, explosives, hazardous chemicals,
+            counterfeit goods, cash or high-risk valuables, or anything prohibited by origin/destination law.
           </div>
 
-          <p class="support-p">
+          <p style="margin-top:10px">
             If you think a listing involves prohibited items, report it to
             <a class="support-link" href="mailto:support@itspackit.com">support@itspackit.com</a>.
           </p>
         </section>
 
+        <!-- Abuse -->
         <section id="abuse" class="card support-card">
-          <h2>Report abuse</h2>
-          <p class="support-p">
-            If you suspect fraud, identity misuse, or unsafe behavior:
-          </p>
-          <ul class="support-list">
-            <li>Email <a class="support-link" href="mailto:support@itspackit.com">support@itspackit.com</a></li>
-            <li>Include your account email</li>
-            <li>Include the user’s name/identifier (if visible)</li>
-            <li>Add screenshots + a short description</li>
+          <h2>Reporting abuse or suspicious activity</h2>
+          <p>If you suspect fraud, identity misuse, or unsafe behavior, email us and include:</p>
+
+          <ul style="margin:10px 0 0 18px; color:var(--muted); line-height:1.7">
+            <li>Your account email</li>
+            <li>The user’s name/identifier (if visible)</li>
+            <li>Screenshots</li>
+            <li>A short description of what happened</li>
           </ul>
-          <p class="support-p">
-            We may suspend accounts that violate our rules or create risk for other users.
+
+          <p style="margin-top:10px">
+            Email: <a class="support-link" href="mailto:support@itspackit.com">support@itspackit.com</a>
           </p>
         </section>
 
-        <section id="privacy" class="card support-card">
-          <h2>Data & privacy</h2>
-          <p class="support-p">
-            You can contact support to request access to your data, correction of profile details, deletion (where legally permitted), or questions about how your data is used.
+        <!-- Privacy -->
+        <section id="privacy-req" class="card support-card">
+          <h2>Data & privacy requests (GDPR)</h2>
+          <p>
+            You can contact support to request: access to your data, correction of your details, deletion of your account where legally permitted,
+            or questions about how your data is stored and used.
           </p>
-          <p class="support-p">
-            See our full policy here:
-            <a class="support-link" href="privacy.html">Privacy Policy</a>.
-          </p>
+
+          <div class="support-actions" style="margin-top:10px">
+            <a class="pill" href="privacy.html">Read Privacy Policy</a>
+            <a class="pill" href="mailto:support@itspackit.com">Contact support</a>
+          </div>
         </section>
 
+        <!-- Deletion -->
         <section id="deletion" class="card support-card">
           <h2>Account deletion</h2>
-          <p class="support-p">
-            You can delete your PackIt account directly from within the app settings.
-          </p>
-          <ul class="support-list">
-            <li>Your account is disabled immediately.</li>
-            <li>Your information is retained for 30 days in case restoration is requested.</li>
-            <li>After 30 days, personal data is permanently deleted or anonymized where legally required retention applies.</li>
-          </ul>
-          <p class="support-p">
-            If you experience any issues, email
+          <p>You can delete your PackIt account directly from within the app settings.</p>
+
+          <div class="callout">
+            <b>Once deletion is requested:</b><br/>
+            • Your account is disabled immediately.<br/>
+            • Your information is retained for 30 days in case restoration is requested.<br/>
+            • After 30 days, personal data is permanently deleted or anonymized where legally required retention applies.
+          </div>
+
+          <p style="margin-top:10px">
+            If you experience any issues, contact
             <a class="support-link" href="mailto:support@itspackit.com">support@itspackit.com</a>.
           </p>
         </section>
 
-      </div>
-    </section>
-
-  </div>
-</main>
+      </section>
+    </div>
+  </main>
 
   <footer class="footer">
     <div class="container footer-inner">
       <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
-        <img src="assets/logo.svg" alt="PackIt logo" style="width:26px;height:26px" />
+        <img src="assets/logo.svg" alt="PackIt logo" style="width:26px;height:26px"/>
         <span style="font-weight:800">PackIt</span>
         <span style="color:var(--muted)">© 2026</span>
       </div>
-
       <div class="inline-links">
         <a href="support.html">Support</a>
         <a href="privacy.html">Privacy Policy</a>
