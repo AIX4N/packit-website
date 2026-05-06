@@ -1,93 +1,291 @@
-<!doctype html><html lang="en"><head>
-<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>PackIt</title>
-<meta name="description" content="PackIt connects senders with verified travelers to carry items across cities and countries."/>
-<link rel="icon" href="assets/logo.svg"/><link rel="stylesheet" href="styles.css"/></head>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>PackIt</title>
+  <meta name="description" content="PackIt connects senders with verified travelers to carry items across cities and countries."/>
+  <link rel="icon" href="assets/logo.svg"/>
+  <link rel="stylesheet" href="styles.css"/>
+
+  <style>
+    /* Home-only polish (keeps site consistent) */
+    .hero{padding:64px 0 26px}
+    .hero h1{margin-top:12px}
+    .hero .lead{font-size:17px}
+    .kicker{font-weight:750}
+
+    .hero-grid{gap:32px}
+    .hero-card{padding:20px}
+    .qr{padding:16px}
+    .qr img{width:240px;height:240px}
+    .qr .small{max-width:40ch}
+
+    .subkicker{
+      margin-top:12px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+    .tag{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 12px;
+      border-radius:999px;
+      border:1px solid rgba(14,22,51,.08);
+      background:rgba(255,255,255,.75);
+      color:var(--muted);
+      font-size:13px;
+      font-weight:650;
+    }
+    .tag b{color:var(--text)}
+    .tag .dot{
+      width:8px;height:8px;border-radius:50%;
+      background:linear-gradient(135deg,var(--primary),var(--accent));
+      box-shadow:0 8px 18px rgba(43,107,255,.25);
+    }
+
+    .cta-row{align-items:center}
+    .ghost{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:12px 14px;
+      border-radius:14px;
+      border:1px solid rgba(43,107,255,.22);
+      background:rgba(255,255,255,.75);
+      color:var(--text);
+      font-weight:750;
+    }
+    .ghost:hover{transform:translateY(-1px);border-color:rgba(43,107,255,.35)}
+    .ghost .ico{width:18px;height:18px}
+
+    .hero-note{
+      margin-top:14px;
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.6;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+    .hero-note span{
+      padding:6px 10px;
+      border-radius:999px;
+      background:rgba(43,107,255,.06);
+      border:1px solid rgba(43,107,255,.12);
+    }
+
+    .feature{padding:18px}
+    .feature .icon{
+      width:44px;height:44px;border-radius:14px;
+      font-size:18px;
+    }
+
+    .split .step{padding:20px}
+    .step h3{font-size:17px}
+    .step p{font-size:14.8px}
+
+    /* Make inline social pills feel a bit more premium */
+    .inline-links .pill{background:rgba(255,255,255,.82)}
+    .inline-links .pill:hover{background:rgba(255,255,255,.92)}
+  </style>
+</head>
+
 <body>
-<div class="nav">
-  <div class="container nav-inner">
-    <a class="brand" href="index.html"><img src="assets/logo.svg" alt="PackIt logo"/><span>PackIt</span></a>
-    <div class="nav-links">
-      <a class="pill" href="about.html">About</a>
-      <a class="pill" href="support.html">Support</a>
-      <a class="pill" href="privacy.html">Privacy</a>
-
-      <!-- ✅ App Store badge in navbar -->
-      <a class="appstore-badge nav-badge" href="https://apps.apple.com/gb/app/packit-match-move/id6761582412" target="_blank" rel="noopener">
-        <img src="assets/appstore-badge-white.svg" alt="Download on the App Store">
+  <div class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html">
+        <img src="assets/logo.svg" alt="PackIt logo"/>
+        <span>PackIt</span>
       </a>
-    </div>
-  </div>
-</div>
+      <div class="nav-links">
+        <a class="pill" href="about.html">About</a>
+        <a class="pill" href="support.html">Support</a>
+        <a class="pill" href="privacy.html">Privacy</a>
 
-<main>
-<section class="hero">
-  <div class="blob one"></div><div class="blob two"></div>
-  <div class="container hero-grid">
-    <div>
-      <div class="kicker">✨ Peer-to-peer delivery • Verified travelers</div>
-      <h1>Pack it. Match it. Move it.</h1>
-      <p class="lead">PackIt helps people send items by connecting them with verified travelers already going your way. Faster than traditional shipping, with a human touch.</p>
-
-      <div class="cta-row">
-        <!-- ✅ App Store badge as primary CTA -->
-        <a class="appstore-badge" href="https://apps.apple.com/gb/app/packit-match-move/id6761582412" target="_blank" rel="noopener">
-          <img src="assets/appstore-badge.svg" alt="Download on the App Store">
+        <a class="appstore-badge nav-badge"
+           href="https://apps.apple.com/gb/app/packit-match-move/id6761582412"
+           target="_blank" rel="noopener">
+          <img src="assets/appstore-badge-white.svg" alt="Download on the App Store">
         </a>
-
-        <a class="btn secondary" href="about.html">Learn more</a>
-      </div>
-
-      <div class="inline-links" style="margin-top:14px">
-        <a class="pill" href="mailto:support@itspackit.com"><svg class="ico" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 7.5A3.5 3.5 0 0 1 7.5 4h9A3.5 3.5 0 0 1 20 7.5v9A3.5 3.5 0 0 1 16.5 20h-9A3.5 3.5 0 0 1 4 16.5v-9Z" stroke="currentColor" stroke-width="1.8"/><path d="m6.5 8 5.2 4.1a1.5 1.5 0 0 0 1.9 0L18.8 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>support@itspackit.com</span></a>
-        <a class="pill" href="https://www.instagram.com/packit.app?igsh=MTZvcXVwam5lNXhwbg%3D%3D&utm_source=qr" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.5 4h9A3.5 3.5 0 0 1 20 7.5v9A3.5 3.5 0 0 1 16.5 20h-9A3.5 3.5 0 0 1 4 16.5v-9A3.5 3.5 0 0 1 7.5 4Z" stroke="currentColor" stroke-width="1.8"/><path d="M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="currentColor" stroke-width="1.8"/><path d="M17.2 6.8h.01" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/></svg><span>@packit.app</span></a>
-        <a class="pill" href="https://linkedin.com/company/itspackit" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.5 9.5V18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M6.5 6.2h.01" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/><path d="M10.5 18v-5.2c0-1.6 1-3 2.8-3 1.7 0 2.7 1.1 2.7 3V18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M10.5 9.5V18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M4.5 4h15A2.5 2.5 0 0 1 22 6.5v11A2.5 2.5 0 0 1 19.5 20h-15A2.5 2.5 0 0 1 2 17.5v-11A2.5 2.5 0 0 1 4.5 4Z" stroke="currentColor" stroke-width="1.8"/></svg><span>LinkedIn</span></a>
-      </div>
-    </div>
-
-    <div class="card hero-card">
-      <div class="qr">
-        <div style="display:flex;align-items:center;gap:10px"><img src="assets/logo.svg" alt="" style="width:32px;height:32px"/><div style="font-weight:800">Scan to download</div></div>
-        <img alt="PackIt App Store QR code" src="https://api.qrserver.com/v1/create-qr-code/?size=420x420&data=https%3A%2F%2Fapps.apple.com%2Fgb%2Fapp%2Fpackit-match-move%2Fid6761582412"/>
-        <div class="small">Open your camera and scan. Or tap “Download”.</div>
       </div>
     </div>
   </div>
-</section>
 
-<section class="section"><div class="container">
-  <h2>Why PackIt</h2>
-  <div class="grid3">
-    <div class="card feature"><div class="icon">🛡️</div><div style="font-weight:800;margin-bottom:6px">Verified community</div><p>Profiles can be reviewed to help keep the platform safe for everyone.</p></div>
-    <div class="card feature"><div class="icon">⚡️</div><div style="font-weight:800;margin-bottom:6px">Faster and flexible</div><p>Match with travelers already on your route and choose dates that fit your schedule.</p></div>
-    <div class="card feature"><div class="icon">💸</div><div style="font-weight:800;margin-bottom:6px">Earn while you travel</div><p>Carriers can earn a reward for carrying items safely from A to B.</p></div>
-  </div>
-</div></section>
+  <main>
+    <section class="hero">
+      <div class="blob one"></div><div class="blob two"></div>
 
-<section class="section"><div class="container">
-  <h2>How it works</h2>
-  <div class="split">
-    <div class="card step"><h3>For Senders</h3><p><b>1)</b> Create a shipment with route, dates, and item details.<br/><b>2)</b> Browse matching trips and propose a match.<br/><b>3)</b> Agree on a reward, meet up, and track the delivery.</p></div>
-    <div class="card step"><h3>For Travelers</h3><p><b>1)</b> Post your trip route and capacity.<br/><b>2)</b> Receive proposals from senders and accept the best one.<br/><b>3)</b> Carry the item and get rewarded after successful delivery.</p></div>
-  </div>
-  <div style="margin-top:14px" class="notice">PackIt is designed for everyday items and personal shipments. Always follow local laws and airline rules.</div>
-</div></section>
-</main>
+      <div class="container hero-grid">
+        <div>
+          <div class="kicker">✨ Peer-to-peer delivery • Verified travelers</div>
 
-<footer class="footer">
-  <div class="container footer-inner">
-    <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
-      <img src="assets/logo.svg" alt="PackIt logo" style="width:26px;height:26px"/>
-      <span style="font-weight:800">PackIt</span>
-      <span style="color:var(--muted)">© 2026</span>
+          <h1>Pack it. Match it. Move it.</h1>
+
+          <p class="lead">
+            PackIt helps people send items by connecting them with verified travelers already going your way.
+            Faster than traditional shipping, with a human touch.
+          </p>
+
+          <div class="subkicker">
+            <div class="tag"><span class="dot"></span><b>Fast</b> matches on real routes</div>
+            <div class="tag"><span class="dot"></span><b>Verified</b> travelers</div>
+            <div class="tag"><span class="dot"></span><b>Reward</b> carriers earn money</div>
+          </div>
+
+          <div class="cta-row">
+            <a class="appstore-badge"
+               href="https://apps.apple.com/gb/app/packit-match-move/id6761582412"
+               target="_blank" rel="noopener">
+              <img src="assets/appstore-badge.svg" alt="Download on the App Store">
+            </a>
+
+            <a class="ghost" href="#how">
+              <svg class="ico" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9 6.8 17 12l-8 5.2V6.8Z" fill="currentColor" opacity=".92"/>
+              </svg>
+              How it works
+            </a>
+
+            <a class="btn secondary" href="about.html">Learn more</a>
+          </div>
+
+          <div class="hero-note">
+            <span>Senders: ship smarter</span>
+            <span>Travelers: earn while you travel</span>
+            <span>Designed for everyday items</span>
+          </div>
+
+          <div class="inline-links" style="margin-top:14px">
+            <a class="pill" href="mailto:support@itspackit.com">
+              <svg class="ico" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 7.5A3.5 3.5 0 0 1 7.5 4h9A3.5 3.5 0 0 1 20 7.5v9A3.5 3.5 0 0 1 16.5 20h-9A3.5 3.5 0 0 1 4 16.5v-9Z" stroke="currentColor" stroke-width="1.8"/>
+                <path d="m6.5 8 5.2 4.1a1.5 1.5 0 0 0 1.9 0L18.8 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+              <span>support@itspackit.com</span>
+            </a>
+
+            <a class="pill" href="https://www.instagram.com/packit.app?igsh=MTZvcXVwam5lNXhwbg%3D%3D&utm_source=qr" target="_blank" rel="noopener">
+              <svg class="ico" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7.5 4h9A3.5 3.5 0 0 1 20 7.5v9A3.5 3.5 0 0 1 16.5 20h-9A3.5 3.5 0 0 1 4 16.5v-9A3.5 3.5 0 0 1 7.5 4Z" stroke="currentColor" stroke-width="1.8"/>
+                <path d="M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8Z" stroke="currentColor" stroke-width="1.8"/>
+                <path d="M17.2 6.8h.01" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/>
+              </svg>
+              <span>@packit.app</span>
+            </a>
+
+            <a class="pill" href="https://linkedin.com/company/itspackit" target="_blank" rel="noopener">
+              <svg class="ico" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6.5 9.5V18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M6.5 6.2h.01" stroke="currentColor" stroke-width="3.2" stroke-linecap="round"/>
+                <path d="M10.5 18v-5.2c0-1.6 1-3 2.8-3 1.7 0 2.7 1.1 2.7 3V18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M10.5 9.5V18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M4.5 4h15A2.5 2.5 0 0 1 22 6.5v11A2.5 2.5 0 0 1 19.5 20h-15A2.5 2.5 0 0 1 2 17.5v-11A2.5 2.5 0 0 1 4.5 4Z" stroke="currentColor" stroke-width="1.8"/>
+              </svg>
+              <span>LinkedIn</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="card hero-card">
+          <div class="qr">
+            <div style="display:flex;align-items:center;gap:10px">
+              <img src="assets/logo.svg" alt="" style="width:34px;height:34px"/>
+              <div style="font-weight:900;letter-spacing:-.01em">Scan to download</div>
+            </div>
+
+            <img
+              alt="PackIt App Store QR code"
+              src="https://api.qrserver.com/v1/create-qr-code/?size=520x520&data=https%3A%2F%2Fapps.apple.com%2Fgb%2Fapp%2Fpackit-match-move%2Fid6761582412"
+            />
+
+            <div class="small">
+              Open your camera and scan — or tap the App Store button.
+            </div>
+
+            <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:8px">
+              <a class="pill" href="https://apps.apple.com/gb/app/packit-match-move/id6761582412" target="_blank" rel="noopener">
+                Download
+              </a>
+              <a class="pill" href="about.html">What is PackIt?</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>Why PackIt</h2>
+        <div class="grid3">
+          <div class="card feature">
+            <div class="icon">🛡️</div>
+            <div style="font-weight:900;margin-bottom:6px">Verified community</div>
+            <p>Profiles can be reviewed to help keep the platform safe for everyone.</p>
+          </div>
+
+          <div class="card feature">
+            <div class="icon">⚡️</div>
+            <div style="font-weight:900;margin-bottom:6px">Fast & flexible</div>
+            <p>Match with travelers already on your route and choose dates that fit your schedule.</p>
+          </div>
+
+          <div class="card feature">
+            <div class="icon">💸</div>
+            <div style="font-weight:900;margin-bottom:6px">Earn while you travel</div>
+            <p>Carriers can earn a reward for carrying items safely from A to B.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="how" class="section">
+      <div class="container">
+        <h2>How it works</h2>
+        <div class="split">
+          <div class="card step">
+            <h3>For Senders</h3>
+            <p>
+              <b>1)</b> Create a shipment with route, dates, and item details.<br/>
+              <b>2)</b> Browse matching trips and propose a match.<br/>
+              <b>3)</b> Agree on a reward, meet up, and track the delivery.
+            </p>
+          </div>
+
+          <div class="card step">
+            <h3>For Travelers</h3>
+            <p>
+              <b>1)</b> Post your trip route and capacity.<br/>
+              <b>2)</b> Receive proposals from senders and accept the best one.<br/>
+              <b>3)</b> Carry the item and get rewarded after successful delivery.
+            </p>
+          </div>
+        </div>
+
+        <div style="margin-top:14px" class="notice">
+          PackIt is designed for everyday items and personal shipments. Always follow local laws and airline rules.
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+        <img src="assets/logo.svg" alt="PackIt logo" style="width:26px;height:26px"/>
+        <span style="font-weight:900">PackIt</span>
+        <span style="color:var(--muted)">© 2026</span>
+      </div>
+      <div class="inline-links">
+        <a href="support.html">Support</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="about.html">About</a>
+        <a href="mailto:support@itspackit.com">support@itspackit.com</a>
+      </div>
     </div>
-    <div class="inline-links">
-      <a href="support.html">Support</a>
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="about.html">About</a>
-      <a href="mailto:support@itspackit.com">support@itspackit.com</a>
-    </div>
-  </div>
-</footer>
-
-</body></html>
+  </footer>
+</body>
+</html>
