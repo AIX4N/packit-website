@@ -31,191 +31,195 @@
     </div>
   </div>
 
-  <main>
-  <!-- Hero header (same vibe as home) -->
-  <section class="page-hero">
-    <div class="blob one"></div><div class="blob two"></div>
-    <div class="container">
-      <div class="page-hero-inner">
-        <h1>Support</h1>
-        <p class="lead">
-          If you need help with the app, we’re here.
-          Contact us anytime at
-          <a href="mailto:support@itspackit.com"><b>support@itspackit.com</b></a>.
-        </p>
+<main class="page support-page">
+  <div class="container">
 
-        <div class="cta-row">
-          <a class="btn" href="mailto:support@itspackit.com">Email support</a>
-          <a class="btn secondary" href="privacy.html">Privacy</a>
+    <!-- Top header -->
+    <section class="support-hero card">
+      <div class="support-hero-inner">
+        <div>
+          <h1>Support</h1>
+          <p class="support-subtitle">
+            Need help with PackIt? We’re here for you.
+            Email us anytime at
+            <a class="support-link" href="mailto:support@itspackit.com">support@itspackit.com</a>.
+          </p>
+
+          <div class="support-cta-row">
+            <a class="btn" href="mailto:support@itspackit.com">
+              Email support
+            </a>
+            <div class="support-meta">
+              Usually within <b>1–5 business days</b>.
+            </div>
+          </div>
+        </div>
+
+        <div class="support-badge">
+          <div class="support-badge-title">Quick actions</div>
+          <div class="support-badge-links">
+            <a class="pill" href="mailto:support@itspackit.com">Contact support</a>
+            <a class="pill" href="privacy.html">Privacy Policy</a>
+            <a class="pill" href="about.html">About PackIt</a>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Content -->
-  <section class="page">
-    <div class="container">
-      <div class="support-layout">
+    <!-- Layout: left TOC + right content -->
+    <section class="support-layout">
+      <aside class="support-toc card">
+        <div class="support-toc-title">Quick help</div>
+        <a href="#account">Account & login</a>
+        <a href="#approval">Approval / verification</a>
+        <a href="#matches">Trips, shipments & matches</a>
+        <a href="#safety">Safety & prohibited items</a>
+        <a href="#abuse">Report abuse</a>
+        <a href="#privacy">Data & privacy</a>
+        <a href="#deletion">Account deletion</a>
+      </aside>
 
-        <!-- Left: Quick help cards -->
-        <aside class="support-sidebar card">
-          <div class="support-sidebar-title">Quick help</div>
+      <div class="support-content">
 
-          <a class="support-tile" href="#account-login">
-            <div class="support-tile-title">Account &amp; login</div>
-            <div class="support-tile-sub">Verification, password reset, login issues</div>
-          </a>
+        <section id="account" class="card support-card">
+          <h2>Account & login</h2>
 
-          <a class="support-tile" href="#approval">
-            <div class="support-tile-title">Approval / verification</div>
-            <div class="support-tile-sub">Pending approval, rejected accounts</div>
-          </a>
-
-          <a class="support-tile" href="#trips-shipments">
-            <div class="support-tile-title">Trips, shipments &amp; matches</div>
-            <div class="support-tile-sub">Posting tips, match problems</div>
-          </a>
-
-          <a class="support-tile" href="#safety">
-            <div class="support-tile-title">Safety &amp; prohibited items</div>
-            <div class="support-tile-sub">What you can’t send/carry</div>
-          </a>
-
-          <a class="support-tile" href="#reporting">
-            <div class="support-tile-title">Report abuse</div>
-            <div class="support-tile-sub">Fraud, suspicious activity</div>
-          </a>
-
-          <a class="support-tile" href="#privacy-requests">
-            <div class="support-tile-title">Data &amp; privacy</div>
-            <div class="support-tile-sub">GDPR requests, account deletion</div>
-          </a>
-
-          <div class="support-mini">
-            <div class="support-mini-title">Response times</div>
-            <div class="support-mini-sub">Usually within 1–5 business days.</div>
-          </div>
-        </aside>
-
-        <!-- Right: Main content as a real card -->
-        <div class="support-content card">
-          <div class="prose">
-
-            <h2 id="account-login">Account &amp; login</h2>
-
-            <h3>I didn’t receive the verification email</h3>
+          <details class="support-faq" open>
+            <summary>I didn’t receive the verification email</summary>
             <ul>
               <li>Check spam/junk folders.</li>
               <li>Make sure you used the correct email address.</li>
               <li>Try requesting a new verification email from the app (if available).</li>
             </ul>
+          </details>
 
-            <h3>I forgot my password</h3>
+          <details class="support-faq">
+            <summary>I forgot my password</summary>
             <ul>
               <li>Use <b>“Forgot password?”</b> on the login screen to request a reset link.</li>
               <li>If the link expired, request a new one.</li>
             </ul>
+          </details>
 
-            <h3>I can’t log in</h3>
+          <details class="support-faq">
+            <summary>I can’t log in</summary>
             <ul>
               <li>Confirm your email is verified.</li>
               <li>Check for typos in email/password.</li>
-              <li>If you still can’t access your account, email <a href="mailto:support@itspackit.com">support@itspackit.com</a>.</li>
+              <li>If it still fails, email <a class="support-link" href="mailto:support@itspackit.com">support@itspackit.com</a>.</li>
             </ul>
+          </details>
+        </section>
 
-            <hr class="soft-hr"/>
+        <section id="approval" class="card support-card">
+          <h2>Approval / verification</h2>
+          <p class="support-p">
+            To keep PackIt safe, some accounts may require review.
+          </p>
 
-            <h2 id="approval">Approval / verification status</h2>
-            <p>To keep PackIt safe, new accounts may require verification.</p>
-
-            <div class="notice">
-              <b>Pending approval:</b> your documents are being reviewed. You’ll be notified once a decision is made.
+          <div class="support-callouts">
+            <div class="support-callout">
+              <b>Pending approval</b>
+              <div>Your documents are being reviewed. You’ll be notified when a decision is made.</div>
             </div>
-
-            <div class="notice" style="margin-top:10px">
-              <b>Rejected:</b> if we couldn’t verify your information, you may see a reason in the app.
-              If you believe it’s a mistake, contact support.
+            <div class="support-callout">
+              <b>Rejected</b>
+              <div>If you believe it’s a mistake, contact support with your account email.</div>
             </div>
-
-            <hr class="soft-hr"/>
-
-            <h2 id="trips-shipments">Trips, shipments, and matches</h2>
-            <h3>Posting a trip</h3>
-            <ul><li>Fill in route, date/time, and available weight clearly.</li></ul>
-
-            <h3>Posting a shipment</h3>
-            <ul><li>Add accurate details, declared value, and an optional photo.</li></ul>
-
-            <h3>Match issues</h3>
-            <ul><li>If a match looks wrong or suspicious, contact support with a screenshot and the match ID (if visible).</li></ul>
-
-            <hr class="soft-hr"/>
-
-            <h2 id="safety">Safety &amp; prohibited items</h2>
-            <p>PackIt is not a shipping company. Users must follow airline, customs, and local laws.</p>
-
-            <div class="notice">
-              <b>Never send or carry prohibited items</b>, including (non-exhaustive):
-              <ul style="margin-top:10px">
-                <li>Illegal substances, weapons, explosives</li>
-                <li>Hazardous chemicals</li>
-                <li>Counterfeit goods</li>
-                <li>Cash or high-risk valuables</li>
-                <li>Anything prohibited by origin or destination laws</li>
-              </ul>
-              If you think a listing involves prohibited items, report it to support.
-            </div>
-
-            <hr class="soft-hr"/>
-
-            <h2 id="reporting">Reporting abuse or suspicious activity</h2>
-            <p>If you suspect fraud, identity misuse, or unsafe behavior:</p>
-            <ol>
-              <li>Email <a href="mailto:support@itspackit.com">support@itspackit.com</a></li>
-              <li>Include:
-                <ul>
-                  <li>Your account email</li>
-                  <li>The user’s name/identifier (if visible)</li>
-                  <li>Screenshots</li>
-                  <li>A short description of what happened</li>
-                </ul>
-              </li>
-            </ol>
-            <p>We may suspend accounts that violate our rules or create risk for other users.</p>
-
-            <hr class="soft-hr"/>
-
-            <h2 id="privacy-requests">Data &amp; privacy requests (GDPR)</h2>
-            <p>
-              We take privacy seriously and aim to follow GDPR principles
-              (lawfulness, fairness, transparency, data minimization, and security).
-            </p>
-
-            <p>You can contact <a href="mailto:support@itspackit.com">support@itspackit.com</a> to request:</p>
-            <ul>
-              <li>Access to your data</li>
-              <li>Correction of your profile details</li>
-              <li>Deletion of your account and personal data (where legally permitted)</li>
-              <li>Questions about how your data is stored and used</li>
-            </ul>
-
-            <h3>Account deletion</h3>
-            <ul>
-              <li>Your account is disabled immediately</li>
-              <li>Your information is retained for 30 days in case restoration is requested</li>
-              <li>After 30 days, personal data is permanently deleted or anonymized (where required)</li>
-            </ul>
-
-            <div class="support-bottom">
-              <a class="pill" href="mailto:support@itspackit.com">Email: support@itspackit.com</a>
-            </div>
-
           </div>
-        </div>
+        </section>
+
+        <section id="matches" class="card support-card">
+          <h2>Trips, shipments & matches</h2>
+
+          <details class="support-faq">
+            <summary>Posting a trip</summary>
+            <ul>
+              <li>Fill in route, date/time, and available weight clearly.</li>
+              <li>Add notes if pickup/drop-off requires context.</li>
+            </ul>
+          </details>
+
+          <details class="support-faq">
+            <summary>Posting a shipment</summary>
+            <ul>
+              <li>Add accurate details, declared value, and an optional photo.</li>
+              <li>Choose realistic dates.</li>
+            </ul>
+          </details>
+
+          <details class="support-faq">
+            <summary>Match issues</summary>
+            <ul>
+              <li>If a match looks wrong or suspicious, contact support with a screenshot.</li>
+              <li>Include the match ID if visible.</li>
+            </ul>
+          </details>
+        </section>
+
+        <section id="safety" class="card support-card">
+          <h2>Safety & prohibited items</h2>
+          <p class="support-p">
+            PackIt is not a shipping company. Users must follow airline, customs, and local laws.
+          </p>
+
+          <div class="notice">
+            Never send or carry prohibited items, including (non-exhaustive): illegal substances, weapons, explosives, hazardous chemicals, counterfeit goods, cash, or anything illegal at origin/destination.
+          </div>
+
+          <p class="support-p">
+            If you think a listing involves prohibited items, report it to
+            <a class="support-link" href="mailto:support@itspackit.com">support@itspackit.com</a>.
+          </p>
+        </section>
+
+        <section id="abuse" class="card support-card">
+          <h2>Report abuse</h2>
+          <p class="support-p">
+            If you suspect fraud, identity misuse, or unsafe behavior:
+          </p>
+          <ul class="support-list">
+            <li>Email <a class="support-link" href="mailto:support@itspackit.com">support@itspackit.com</a></li>
+            <li>Include your account email</li>
+            <li>Include the user’s name/identifier (if visible)</li>
+            <li>Add screenshots + a short description</li>
+          </ul>
+          <p class="support-p">
+            We may suspend accounts that violate our rules or create risk for other users.
+          </p>
+        </section>
+
+        <section id="privacy" class="card support-card">
+          <h2>Data & privacy</h2>
+          <p class="support-p">
+            You can contact support to request access to your data, correction of profile details, deletion (where legally permitted), or questions about how your data is used.
+          </p>
+          <p class="support-p">
+            See our full policy here:
+            <a class="support-link" href="privacy.html">Privacy Policy</a>.
+          </p>
+        </section>
+
+        <section id="deletion" class="card support-card">
+          <h2>Account deletion</h2>
+          <p class="support-p">
+            You can delete your PackIt account directly from within the app settings.
+          </p>
+          <ul class="support-list">
+            <li>Your account is disabled immediately.</li>
+            <li>Your information is retained for 30 days in case restoration is requested.</li>
+            <li>After 30 days, personal data is permanently deleted or anonymized where legally required retention applies.</li>
+          </ul>
+          <p class="support-p">
+            If you experience any issues, email
+            <a class="support-link" href="mailto:support@itspackit.com">support@itspackit.com</a>.
+          </p>
+        </section>
 
       </div>
-    </div>
-  </section>
+    </section>
+
+  </div>
 </main>
 
   <footer class="footer">
