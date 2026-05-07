@@ -167,9 +167,9 @@
       const url = "https://apps.apple.com/gb/app/packit-match-move/id6761582412";
       const el = document.getElementById("packit-qr");
       if (!el || !window.QRCode) return;
-
+  
       el.innerHTML = "";
-
+  
       new QRCode(el, {
         text: url,
         width: 320,
@@ -178,7 +178,11 @@
         colorLight: "#ffffff",
         correctLevel: QRCode.CorrectLevel.H
       });
-
+  
+      // Mark the generated QR element so CSS can target it safely
+      const generated = el.querySelector("canvas") || el.querySelector("img");
+      if (generated) generated.classList.add("qr-generated");
+  
       // Logo overlay (center)
       const logo = document.createElement("img");
       logo.src = "assets/logo.svg";
