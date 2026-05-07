@@ -50,62 +50,47 @@ h1{font-size:clamp(34px,5vw,52px);line-height:1.05;margin:14px 0 12px;letter-spa
    Premium QR block (home)
    ========================= */
 .premium-qr{
+  padding:22px;
+  gap:16px;
   align-items:stretch;
-  gap:14px;
-  padding:18px;
+  text-align:left;
 }
 
-.qr-head{
-  display:flex;
-  align-items:center;
-  gap:12px;
+.premium-qr .qr-head{
   width:100%;
+  padding-bottom:12px;
+  border-bottom:1px solid rgba(14,22,51,.06);
 }
 
-.qr-mark{
-  width:42px;
-  height:42px;
-  border-radius:14px;
-  display:grid;
-  place-items:center;
-  border:1px solid rgba(14,22,51,.06);
-  background:linear-gradient(180deg, rgba(43,107,255,.10), rgba(43,201,255,.08));
-  box-shadow:0 10px 26px rgba(14,22,51,.06);
-  flex:0 0 auto;
-}
-
-.qr-mark img{
-  width:22px;
-  height:22px;
-}
-
-.qr-text{min-width:0}
-.qr-title{
+.premium-qr .qr-title{
   font-weight:850;
   letter-spacing:-.02em;
-  line-height:1.1;
-}
-.qr-tip{
-  font-size:12.5px;
-  color:var(--muted);
-  margin-top:4px;
-  line-height:1.35;
+  font-size:16px;
+  line-height:1.15;
 }
 
-.qr-img{
+.premium-qr .qr-tip{
+  margin-top:6px;
+  font-size:13px;
+  color:var(--muted);
+  line-height:1.4;
+}
+
+.premium-qr .qr-img{
   width:min(320px, 100%);
   height:auto;
   display:block;
   margin:0 auto;
-  border-radius:16px;
+  border-radius:18px;
   border:1px solid rgba(14,22,51,.08);
   background:#fff;
   box-shadow:0 14px 34px rgba(14,22,51,.08);
 }
 
-.qr-foot{
+.premium-qr .qr-foot{
   font-size:12.5px;
   color:var(--muted);
   text-align:center;
   line-height:1.35;
+  margin-top:2px;
 }
