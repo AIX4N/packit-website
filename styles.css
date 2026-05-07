@@ -46,37 +46,17 @@ h1{font-size:clamp(34px,5vw,52px);line-height:1.05;margin:14px 0 12px;letter-spa
 .appstore-badge img {transition: transform .15s ease, filter .15s ease;}
 .appstore-badge:hover img {transform: translateY(-1px);filter: brightness(1.03);}
 
-/* =========================
-   Premium QR block (home)
-   ========================= */
-.premium-qr{
-  padding:22px;
-  gap:16px;
-  align-items:stretch;
-  text-align:left;
+/* Premium QR block (home) — minimal */
+.qr-premium{
+  gap:12px;
 }
-
-.premium-qr .qr-head{
-  width:100%;
-  padding-bottom:12px;
-  border-bottom:1px solid rgba(14,22,51,.06);
-}
-
-.premium-qr .qr-title{
-  font-weight:850;
+.qr-premium .qr-title{
+  font-weight:900;
   letter-spacing:-.02em;
   font-size:16px;
-  line-height:1.15;
+  line-height:1.1;
 }
-
-.premium-qr .qr-tip{
-  margin-top:6px;
-  font-size:13px;
-  color:var(--muted);
-  line-height:1.4;
-}
-
-.premium-qr .qr-img{
+.qr-premium .qr-img{
   width:min(320px, 100%);
   height:auto;
   display:block;
@@ -85,12 +65,4 @@ h1{font-size:clamp(34px,5vw,52px);line-height:1.05;margin:14px 0 12px;letter-spa
   border:1px solid rgba(14,22,51,.08);
   background:#fff;
   box-shadow:0 14px 34px rgba(14,22,51,.08);
-}
-
-.premium-qr .qr-foot{
-  font-size:12.5px;
-  color:var(--muted);
-  text-align:center;
-  line-height:1.35;
-  margin-top:2px;
 }
