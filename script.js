@@ -174,6 +174,51 @@
     });
   });
 
+  /* ---------- QR lightbox (tap to enlarge) ---------- */
+  var qrTriggers = document.querySelectorAll("[data-qr-zoom]");
+  if (qrTriggers.length) {
+    var modal = document.createElement("div");
+    modal.className = "qr-modal";
+    modal.setAttribute("aria-hidden", "true");
+    modal.innerHTML =
+      '<div class="qr-modal-card" role="dialog" aria-label="App Store QR code">' +
+      '<button class="qr-modal-close" type="button" aria-label="Close">×</button>' +
+      '<img alt="QR code linking to PackIt on the App Store"/>' +
+      '<span class="qm-title">Scan with your phone camera</span>' +
+      '<span class="qm-sub">Opens PackIt on the App Store</span>' +
+      "</div>";
+    document.body.appendChild(modal);
+    var modalImg = modal.querySelector("img");
+
+    var openModal = function (src) {
+      modalImg.src = src;
+      modal.classList.add("open");
+      modal.setAttribute("aria-hidden", "false");
+    };
+    var closeModal = function () {
+      modal.classList.remove("open");
+      modal.setAttribute("aria-hidden", "true");
+    };
+
+    qrTriggers.forEach(function (el) {
+      el.addEventListener("click", function () {
+        openModal(el.getAttribute("data-qr-zoom"));
+      });
+      el.addEventListener("keydown", function (e) {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          openModal(el.getAttribute("data-qr-zoom"));
+        }
+      });
+    });
+    modal.addEventListener("click", function (e) {
+      if (!e.target.closest("img")) closeModal();
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") closeModal();
+    });
+  }
+
   /* ---------- Footer year ---------- */
   document.querySelectorAll("[data-year]").forEach(function (el) {
     el.textContent = new Date().getFullYear();

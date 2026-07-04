@@ -192,23 +192,66 @@ a.pill:hover{border-color:var(--mid);transform:translateY(-1px);box-shadow:var(-
   display:inline-flex;align-items:center;gap:12px;
   background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);
   border-radius:var(--r-md);padding:10px 16px 10px 10px;backdrop-filter:blur(8px);
+  transition:background .18s ease,transform .18s ease;
 }
+.qr-mini:hover{background:rgba(255,255,255,.18);transform:translateY(-2px)}
 .qr-mini img{width:64px;height:64px;border-radius:10px;background:#fff;padding:4px}
-.qr-mini span{font-size:13px;font-weight:600;color:rgba(255,255,255,.9);line-height:1.4;max-width:110px}
+.qr-mini span{font-size:13px;font-weight:600;color:rgba(255,255,255,.9);line-height:1.4;max-width:120px;text-align:left}
+.qr-mini small{display:block;font-size:11px;font-weight:600;color:var(--accent);margin-top:2px}
+
+/* QR lightbox */
+[data-qr-zoom]{cursor:zoom-in}
+.qr-modal{
+  position:fixed;inset:0;z-index:300;
+  background:rgba(4,42,60,.75);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  display:flex;align-items:center;justify-content:center;padding:24px;
+  opacity:0;pointer-events:none;transition:opacity .25s ease;
+}
+.qr-modal.open{opacity:1;pointer-events:auto}
+.qr-modal-card{
+  position:relative;background:#fff;border-radius:var(--r-lg);padding:30px 30px 26px;text-align:center;
+  max-width:min(440px,92vw);box-shadow:var(--shadow-lg);
+  transform:scale(.9) translateY(10px);transition:transform .25s ease;
+}
+.qr-modal.open .qr-modal-card{transform:none}
+.qr-modal-card img{width:min(330px,72vw);height:auto;margin:0 auto;border-radius:14px}
+.qr-modal-card .qm-title{display:block;margin-top:16px;font-family:var(--font-display);font-weight:800;font-size:17px;color:var(--primary)}
+.qr-modal-card .qm-sub{display:block;margin-top:4px;font-size:13.5px;color:var(--muted)}
+.qr-modal-close{
+  position:absolute;top:14px;right:14px;width:34px;height:34px;border-radius:50%;
+  background:var(--bg);color:var(--muted);font-size:20px;line-height:1;
+  display:flex;align-items:center;justify-content:center;transition:all .18s ease;
+}
+.qr-modal-close:hover{background:var(--accent-soft);color:var(--primary)}
 
 /* ---------- Phone mockup ---------- */
 .hero-visual{position:relative;display:flex;justify-content:center;padding:10px 0}
 .phone{
-  position:relative;width:300px;
+  position:relative;width:290px;
   background:linear-gradient(180deg,#0E1C24,#13242E);
-  border-radius:44px;padding:12px;
+  border-radius:46px;padding:11px;
   box-shadow:var(--shadow-lg),inset 0 0 0 2px rgba(255,255,255,.08);
   animation:phoneFloat 7s ease-in-out infinite;
 }
 @keyframes phoneFloat{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-14px) rotate(.5deg)}}
-.phone-screen{background:var(--bg);border-radius:34px;overflow:hidden}
-.phone-notch{width:110px;height:24px;background:#0E1C24;border-radius:0 0 16px 16px;margin:0 auto}
-.app-ui{padding:14px 14px 18px}
+.phone-screen{
+  background:var(--bg);border-radius:36px;overflow:hidden;
+  aspect-ratio:9/18.8;display:flex;flex-direction:column;
+}
+.phone-notch{flex:none;width:110px;height:24px;background:#0E1C24;border-radius:0 0 16px 16px;margin:0 auto}
+.app-ui{flex:1;display:flex;flex-direction:column;min-height:0;padding:14px 14px 0}
+.match-card.ghost{opacity:.72;margin-top:10px;padding:11px 14px}
+.match-card.ghost .city{font-size:15px}
+.app-tabbar{
+  margin-top:auto;flex:none;display:flex;justify-content:space-around;align-items:center;
+  padding:8px 8px 12px;background:#fff;border-top:1px solid var(--line);
+}
+.app-tabbar .tb{
+  display:flex;flex-direction:column;align-items:center;gap:3px;
+  font-size:9.5px;font-weight:700;color:#9AACB6;
+}
+.app-tabbar .tb svg{width:19px;height:19px}
+.app-tabbar .tb.active{color:var(--primary)}
 .app-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
 .app-head .t{font-family:var(--font-display);font-weight:800;font-size:16px;color:var(--primary)}
 .app-head img{width:22px;height:22px}
@@ -341,7 +384,7 @@ a.pill:hover{border-color:var(--mid);transform:translateY(-1px);box-shadow:var(-
 .tab-panel.active{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;animation:fadeUp .45s ease}
 @keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
 .step-card{
-  position:relative;background:#fff;border-radius:var(--r-lg);padding:56px 24px 28px;
+  position:relative;background:#fff;border-radius:var(--r-lg);padding:80px 24px 28px;
   border:1px solid var(--line);box-shadow:var(--shadow-sm);
   transition:transform .25s ease,box-shadow .25s ease;
 }

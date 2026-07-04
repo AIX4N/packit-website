@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="styles.css?v=2"/>
+<link rel="stylesheet" href="styles.css?v=3"/>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -64,10 +64,10 @@
         <a class="appstore-badge" href="https://apps.apple.com/gb/app/packit-match-move/id6761582412" target="_blank" rel="noopener">
           <img src="assets/appstore-badge.svg" alt="Download on the App Store"/>
         </a>
-        <div class="qr-mini">
+        <button class="qr-mini" type="button" data-qr-zoom="assets/qr-packit-blue.png" aria-label="Enlarge the App Store QR code">
           <img src="assets/qr-packit-blue.png" alt="QR code to download PackIt"/>
-          <span>Scan with your phone camera</span>
-        </div>
+          <span>Scan with your camera<small>Tap to enlarge ⤢</small></span>
+        </button>
       </div>
       <div class="hero-social">
         <a class="pill" href="https://www.instagram.com/packit.app?utm_source=qr" target="_blank" rel="noopener">
@@ -121,6 +121,19 @@
               </div>
               <div class="stage-label">Status: <b>Picked up</b> — next stop, the airport ✈️</div>
               <div class="mini-btn">Track delivery</div>
+            </div>
+            <div class="match-card ghost">
+              <div class="route-row" style="margin-bottom:0">
+                <div><div class="city">Paris</div><div class="code">CDG · FR</div></div>
+                <div class="route-line"><svg class="plane" viewBox="0 0 24 24" fill="currentColor"><path d="M21.5 15.5v-2l-8.5-5V3.25a1.5 1.5 0 0 0-3 0V8.5l-8.5 5v2l8.5-2.5v5.25L7.75 19.9v1.6L12 20.25l4.25 1.25v-1.6L14 18.75V13.5l7.5 2Z"/></svg></div>
+                <div style="text-align:right"><div class="city">Dubai</div><div class="code">DXB · AE</div></div>
+              </div>
+            </div>
+            <div class="app-tabbar">
+              <span class="tb active"><svg viewBox="0 0 24 24" fill="none"><path d="M4 11.5 12 4l8 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M6.5 10v9h11v-9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Home</span>
+              <span class="tb"><svg viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="2"/><path d="m16 16 4.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Search</span>
+              <span class="tb"><svg viewBox="0 0 24 24" fill="none"><path d="M4 8.5 12 4l8 4.5v7L12 20l-8-4.5v-7Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M4 8.5 12 13l8-4.5M12 13v7" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>Matches</span>
+              <span class="tb"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8.5" r="3.5" stroke="currentColor" stroke-width="2"/><path d="M5 19.5c1.3-3 3.9-4.5 7-4.5s5.7 1.5 7 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>Account</span>
             </div>
           </div>
         </div>
@@ -396,9 +409,9 @@
           <a class="btn ghost-dark" href="about.html">Our story</a>
         </div>
       </div>
-      <div class="qr-card">
+      <div class="qr-card" data-qr-zoom="assets/qr-packit-blue.png" role="button" tabindex="0" aria-label="Enlarge the App Store QR code">
         <img src="assets/qr-packit-blue.png" alt="QR code linking to PackIt on the App Store"/>
-        <span>Scan to download</span>
+        <span>Scan to download · tap to enlarge</span>
       </div>
     </div>
   </div>
@@ -451,6 +464,6 @@
   </div>
 </footer>
 
-<script src="script.js?v=2"></script>
+<script src="script.js?v=3"></script>
 </body>
 </html>
