@@ -143,7 +143,7 @@ a.pill:hover{border-color:var(--mid);transform:translateY(-1px);box-shadow:var(-
   color:#fff;
   padding:150px 0 60px;
 }
-.hero .orb{position:absolute;border-radius:50%;filter:blur(70px);opacity:.45;pointer-events:none}
+.hero .orb,.links-body .orb{position:absolute;border-radius:50%;filter:blur(70px);opacity:.45;pointer-events:none}
 .orb.a{width:420px;height:420px;background:var(--mid);top:-140px;right:-100px;animation:drift 14s ease-in-out infinite alternate}
 .orb.b{width:340px;height:340px;background:var(--accent);bottom:-160px;left:-120px;animation:drift 18s ease-in-out infinite alternate-reverse}
 @keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(40px,30px) scale(1.08)}}
@@ -655,6 +655,65 @@ input[type="range"]::-moz-range-thumb{
 .founder-card .fn{font-family:var(--font-display);font-weight:800;font-size:18px;color:var(--ink)}
 .founder-card .fr{color:var(--mid);font-weight:700;font-size:14px;margin:2px 0 6px}
 .founder-card p{color:var(--muted);font-size:14px;line-height:1.6}
+
+/* ---------- Links page (link-in-bio / QR landing) ---------- */
+.links-body{
+  min-height:100vh;position:relative;overflow-x:hidden;
+  background:
+    radial-gradient(900px 500px at 85% -10%, rgba(81,153,183,.5), transparent 60%),
+    radial-gradient(700px 500px at -10% 110%, rgba(156,219,244,.2), transparent 55%),
+    linear-gradient(160deg,#06344A 0%, var(--primary) 55%, #0A6088 100%);
+}
+.links-body::after{
+  content:"";position:fixed;inset:0;pointer-events:none;
+  background-image:radial-gradient(rgba(255,255,255,.09) 1px, transparent 1.4px);
+  background-size:26px 26px;
+}
+.links-body .orb{position:fixed}
+.links-wrap{
+  position:relative;z-index:2;min-height:100vh;
+  display:flex;align-items:center;justify-content:center;
+  padding:56px 20px;
+}
+.links-card{width:min(460px,100%);text-align:center}
+.links-logo{width:76px;height:76px;margin:0 auto 18px;filter:drop-shadow(0 8px 24px rgba(0,0,0,.25))}
+.links-card h1{color:#fff;font-size:32px;margin-bottom:6px}
+.links-tag{color:rgba(255,255,255,.78);font-size:15.5px;margin-bottom:34px;font-weight:500}
+.link-btn{
+  display:flex;align-items:center;gap:14px;width:100%;
+  padding:14px 18px;border-radius:20px;margin-bottom:13px;
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  color:#fff;text-align:left;
+  transition:transform .18s ease,background .18s ease,border-color .18s ease;
+}
+a.link-btn:hover{transform:translateY(-3px);background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.35)}
+.link-btn .lb-ico{
+  flex:none;width:46px;height:46px;border-radius:14px;
+  background:rgba(255,255,255,.12);color:#fff;
+  display:flex;align-items:center;justify-content:center;
+}
+.link-btn .lb-ico svg{width:23px;height:23px}
+.link-btn .lb-txt{flex:1;font-family:var(--font-display);font-weight:700;font-size:16px;line-height:1.25}
+.link-btn .lb-txt small{display:block;font-family:var(--font-body);font-weight:500;font-size:12.5px;color:rgba(255,255,255,.65);margin-top:3px}
+.link-btn .lb-arrow{flex:none;font-size:18px;color:rgba(255,255,255,.55);font-weight:700}
+.link-btn.primary{background:var(--accent);border-color:transparent;color:var(--primary-deep);box-shadow:0 12px 32px rgba(156,219,244,.28)}
+.link-btn.primary .lb-ico{background:rgba(7,88,123,.14);color:var(--primary-deep)}
+.link-btn.primary .lb-txt small{color:rgba(4,58,82,.65)}
+.link-btn.primary .lb-arrow{color:rgba(4,58,82,.55)}
+a.link-btn.primary:hover{background:#B4E5F8}
+.link-btn.disabled{opacity:.6;cursor:default}
+.soon-badge{
+  flex:none;font-size:10.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;
+  padding:5px 11px;border-radius:999px;background:rgba(255,255,255,.16);color:rgba(255,255,255,.85);
+}
+.links-home{
+  display:inline-block;margin-top:22px;
+  color:rgba(255,255,255,.65);font-weight:700;font-size:14px;
+  border-bottom:1px solid rgba(255,255,255,.25);padding-bottom:2px;
+  transition:color .18s ease,border-color .18s ease;
+}
+.links-home:hover{color:#fff;border-color:#fff}
 
 /* ---------- Reveal on scroll ---------- */
 .reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s ease}
